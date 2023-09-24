@@ -15,28 +15,66 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
   playerSelection = prompt("Choose rock, paper or scissors");
+
   if (playerSelection === "rock" && computerSelection === "scissors" ||
       playerSelection === "paper" && computerSelection === "rock" ||
       playerSelection === "scissors" && computerSelection === "paper") {
-        return `You Win! ${playerSelection} beats ${computerSelection}`;
+        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        return "playerWin";
 
       } else if (playerSelection === "rock" && computerSelection === "paper" ||
                 playerSelection === "paper" && computerSelection === "scissors" ||
                 playerSelection === "scissors" && computerSelection === "rock") {
-                  return `You Lose! ${computerSelection} beats ${playerSelection}`;
+                  console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+                  return "botWin"
                   
                 } else if (playerSelection === "rock" && computerSelection === "rock" ||
                           playerSelection === "paper" && computerSelection === "paper" ||
                           playerSelection === "scissors" && computerSelection === "scissors") {
-                            return "Tie!"
+                            console.log("Tie!");
 
                 } else {
-                  return "Wrong Input!"
+                  console.log("Wrong Input!");
                 }
 }
 
-let computerSelection
-let playerSelection 
+let playerScore;
+let botScore;
+
+// function that plays a series of 5 games 
+function game() {
+  playerScore = 0;
+  botScore = 0;
+  for (let i = 1; i <= 5; i++) {
+    let game = playRound();
+    if (game === "playerWin") {
+      playerScore++
+      console.log(`Player Score: ${playerScore} Bot Score: ${botScore}`)
+    
+    } else if (game === "botWin") {
+      botScore++
+      console.log(`Player Score: ${playerScore} Bot Score: ${botScore}`)
+    
+    } else {
+      console.log(`Player Score: ${playerScore} Bot Score: ${botScore}`)
+    }
+  }
+
+  // checks whether you win series, lose series, or if its a tie
+  if (playerScore > botScore) {
+    console.log(`You Win! Final score: ${playerScore} : ${botScore}`);
+  
+  } else if (playerScore < botScore) {
+    console.log(`You Lose! Final score: ${playerScore} : ${botScore}`);
+  
+  } else if (playerScore === botScore) {
+    console.log(`Tie! Final score: ${playerScore} : ${botScore}`);
+  }
+}
+
+
+
+
 
 
 
