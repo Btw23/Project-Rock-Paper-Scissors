@@ -14,7 +14,7 @@ function getComputerChoice() {
 // function to play one round of rock, paper, scissors
 function playRound(playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
-  playerSelection = prompt("Choose rock, paper or scissors");
+  playerSelection = prompt("Choose rock, paper or scissors").toLowerCase();
 
   if (playerSelection === "rock" && computerSelection === "scissors" ||
       playerSelection === "paper" && computerSelection === "rock" ||
@@ -71,6 +71,8 @@ function game() {
     console.log(`Tie! Final score: ${playerScore} : ${botScore}`);
   }
 }
+
+game();
 
 
 
