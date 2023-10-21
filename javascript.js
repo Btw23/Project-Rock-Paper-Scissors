@@ -14,7 +14,6 @@ function getComputerChoice() {
 // function to play one round of rock, paper, scissors
 function playRound(playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
-  playerSelection = prompt("Choose rock, paper or scissors").toLowerCase();
 
   if (playerSelection === "rock" && computerSelection === "scissors" ||
       playerSelection === "paper" && computerSelection === "rock" ||
@@ -37,42 +36,17 @@ function playRound(playerSelection, computerSelection) {
                   console.log("Wrong Input!");
                 }
 }
-
+let playerSelection;
 let playerScore;
 let botScore;
 
-// function that plays a series of 5 games 
-function game() {
-  playerScore = 0;
-  botScore = 0;
-  for (let i = 1; i <= 5; i++) {
-    let game = playRound();
-    if (game === "playerWin") {
-      playerScore++
-      console.log(`Player Score: ${playerScore} Bot Score: ${botScore}`)
-    
-    } else if (game === "botWin") {
-      botScore++
-      console.log(`Player Score: ${playerScore} Bot Score: ${botScore}`)
-    
-    } else {
-      console.log(`Player Score: ${playerScore} Bot Score: ${botScore}`)
-    }
-  }
+const rockButton = document.querySelector(".button-container :nth-child(1)")
+const paperButton = document.querySelector(".button-container :nth-child(2)")
+const scissorsButton = document.querySelector(".button-container :nth-child(3)")
 
-  // checks whether you win series, lose series, or if its a tie
-  if (playerScore > botScore) {
-    console.log(`You Win! Final score: ${playerScore} : ${botScore}`);
-  
-  } else if (playerScore < botScore) {
-    console.log(`You Lose! Final score: ${playerScore} : ${botScore}`);
-  
-  } else if (playerScore === botScore) {
-    console.log(`Tie! Final score: ${playerScore} : ${botScore}`);
-  }
-}
-
-game();
+rockButton.addEventListener("click", () => playRound("rock"));
+paperButton.addEventListener("click", () => playRound("paper"));
+scissorsButton.addEventListener("click", () => playRound("scissors"));
 
 
 
