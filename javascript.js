@@ -18,27 +18,28 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "scissors" ||
       playerSelection === "paper" && computerSelection === "rock" ||
       playerSelection === "scissors" && computerSelection === "paper") {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        scoreDiv.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
         return "playerWin";
 
       } else if (playerSelection === "rock" && computerSelection === "paper" ||
                 playerSelection === "paper" && computerSelection === "scissors" ||
                 playerSelection === "scissors" && computerSelection === "rock") {
-                  console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+                  scoreDiv.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
                   return "botWin"
                   
                 } else if (playerSelection === "rock" && computerSelection === "rock" ||
                           playerSelection === "paper" && computerSelection === "paper" ||
                           playerSelection === "scissors" && computerSelection === "scissors") {
-                            console.log("Tie!");
+                            scoreDiv.textContent = "Tie!";
 
-                } else {
-                  console.log("Wrong Input!");
                 }
 }
+
 let playerSelection;
 let playerScore;
 let botScore;
+
+const scoreDiv = document.querySelector(".score");
 
 const rockButton = document.querySelector(".button-container :nth-child(1)")
 const paperButton = document.querySelector(".button-container :nth-child(2)")

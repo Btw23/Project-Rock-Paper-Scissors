@@ -11,4 +11,13 @@
 button {
   height: 40px;
   width: 100px;
+  border-radius: 10px;
+}
+
+.score {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
