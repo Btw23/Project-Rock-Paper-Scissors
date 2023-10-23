@@ -1,6 +1,5 @@
 This is a rock, paper, scissors project.
-User inputs are from prompt window, results are logged to the console.
-
-To play call a function game() in the console.
+User selection is done using buttons, bot selection is random.
+The current score, and all series winner is displayed above.
 
 To see it: https://btw23.github.io/Project-Rock-Paper-Scissors/
