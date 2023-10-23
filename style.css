@@ -1,4 +1,6 @@
-
+body {
+  background-color: #121212;
+}
 
 .button-container {
   display: flex;
@@ -14,10 +16,23 @@ button {
   border-radius: 10px;
 }
 
-.score {
+.score-container {
+  display: flex;
   height: 300px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.winner,
+.score {
+  height: 100px;
+  font-size: 30px;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+}
+
+.score {
+  font-size: 50px;
 }
